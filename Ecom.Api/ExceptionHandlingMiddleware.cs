@@ -25,8 +25,9 @@ public class ExceptionHandlingMiddleware
         }
         catch (Exception ex)
         {
-            //1. Log full eception
-            _logger.LogError(ex, ex.Message);
+            // 1) Log full exception (সবসময়)
+            _logger.LogError(ex, "Unhandled exception occurred. TraceId: {TraceId}", context.TraceIdentifier);
+
 
             //2. Map exception to status code and message
             var (statusCode, message, errors) = MapException(ex);
