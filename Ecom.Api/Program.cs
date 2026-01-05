@@ -1,3 +1,4 @@
+using Ecom.Api;
 using Ecom.Application;
 using Ecom.Infrastructure;
 
@@ -13,6 +14,8 @@ builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseSwagger();
 app.UseSwaggerUI();
