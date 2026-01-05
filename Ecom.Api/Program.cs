@@ -2,7 +2,7 @@ using Ecom.Api;
 using Ecom.Api.Validators.Products;
 using Ecom.Application;
 using Ecom.Infrastructure;
-using FluentValidation;
+using FluentValidation.DependencyInjectionExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
