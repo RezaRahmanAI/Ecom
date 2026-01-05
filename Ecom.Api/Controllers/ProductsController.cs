@@ -1,5 +1,5 @@
-﻿using Ecom.Application.Services;
-using Microsoft.AspNetCore.Http;
+﻿using Ecom.Api.Contracts.Products;
+using Ecom.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecom.Api.Controllers;
@@ -43,5 +43,3 @@ public class ProductsController : ControllerBase
     }
 }
 
-public record CreateProductRequest(string Name, decimal Price, int Stock);
-public record UpdateProductRequest(string Name, decimal Price, int Stock, bool IsActive);

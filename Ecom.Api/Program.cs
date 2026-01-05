@@ -1,6 +1,8 @@
 using Ecom.Api;
+using Ecom.Api.Validators.Products;
 using Ecom.Application;
 using Ecom.Infrastructure;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+// Fluent Validation
 
 
 builder.Services.AddEndpointsApiExplorer();
