@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="InsurTech.Api/InsurTech.Api.csproj" />
+  <Project Path="InsurTech.Application/InsurTech.Application.csproj" />
+  <Project Path="InsurTech.Domain/InsurTech.Domain.csproj" />
+  <Project Path="InsurTech.Infrastructure/InsurTech.Infrastructure.csproj" />
+</Solution>
