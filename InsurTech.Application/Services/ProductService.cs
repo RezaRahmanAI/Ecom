@@ -14,15 +14,15 @@ public class ProductService : IProductService
 
     public Task<int> CreateProductAsync(string name, decimal price, int stock)
     {
-        //if(string.IsNullOrEmpty(name))
-        //    throw new ArgumentException("Product name cannot be null or empty.");
-        //if(price <= 0) throw new ArgumentException("Product price must be greater than zero.");
-        //if(stock < 0) throw new ArgumentException("Product stock cannot be negative.");
+        if (string.IsNullOrEmpty(name))
+            throw new ArgumentException("Product name cannot be null or empty.");
+        if (price <= 0) throw new ArgumentException("Product price must be greater than zero.");
+        if (stock < 0) throw new ArgumentException("Product stock cannot be negative.");
 
-        //var item = new Product { Name= name, Price = price, Stock = stock, IsActive = true };
+        var item = new Product { Name = name, Price = price, Stock = stock, IsActive = true };
 
-        //return _repo.AddProduct(item);
-        throw new ArgumentException("Test error: Invalid product input");
+        return _repo.AddProduct(item);
+        //throw new ArgumentException("Test error: Invalid product input");
 
     }
 
