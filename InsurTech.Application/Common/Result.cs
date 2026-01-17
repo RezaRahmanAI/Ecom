@@ -1,4 +1,5 @@
-﻿using InsurTech.Application.Common;
+﻿
+namespace InsurTech.Application.Common;
 
 public class Result
 {
@@ -10,15 +11,15 @@ public class Result
     public static Result Success(string message = "OK")
         => new() { IsSuccess = true, Message = message };
 
-    public static Result Failure(string message, ErrorType type = ErrorType.Failure)
+    public static Result Failure(string message, ErrorType type = global::InsurTech.Application.Common.ErrorType.Failure)
         => new() { IsSuccess = false, Message = message, ErrorType = type };
 
     public static Result NotFound(string message = "Not found")
-        => Failure(message, ErrorType.NotFound);
+        => Failure(message, global::InsurTech.Application.Common.ErrorType.NotFound);
 
     public static Result Conflict(string message = "Conflict")
-        => Failure(message, ErrorType.Conflict);
+        => Failure(message, global::InsurTech.Application.Common.ErrorType.Conflict);
 
     public static Result Validation(Dictionary<string, string[]> errors, string message = "Validation failed")
-        => new() { IsSuccess = false, Message = message, ErrorType = ErrorType.Validation, Errors = errors };
+        => new() { IsSuccess = false, Message = message, ErrorType = global::InsurTech.Application.Common.ErrorType.Validation, Errors = errors };
 }
