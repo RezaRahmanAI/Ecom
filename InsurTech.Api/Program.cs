@@ -1,4 +1,5 @@
 using InsurTech.Api;
+using InsurTech.Api.Filters;
 using InsurTech.Api.Validators.Products;
 using InsurTech.Application;
 using InsurTech.Domain.Entities;
@@ -13,7 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<ApiResponseWrapperFilter>();
+});
 
 // Fluent Validation
 
