@@ -24,7 +24,7 @@ public class ProductsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateProductRequest request)
     {
-        var id = await _service.CreateProductAsync(request.Name, request.Price, request.Stock );
+        var id = await _service.CreateProductAsync(request.Name, request.Price, request.Stock);
         return CreatedAtAction(nameof(GetById), new { id }, new { id });
     }
 
@@ -32,14 +32,13 @@ public class ProductsController : ControllerBase
     public async Task<IActionResult> Update(int id, [FromBody] UpdateProductRequest request)
     {
         var updated = await _service.UpdateProductAsync(id, request.Name, request.Price, request.Stock, request.IsActive);
-        return updated ? NoContent() : NotFound();
+        return updated ? Ok() : NotFound();
     }
 
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> Delete(int id)
     {
         var deleted = await _service.DeleteProductAsync(id);
-        return deleted ? NoContent() : NotFound();
+        return deleted ? Ok() : NotFound();
     }
 }
-
